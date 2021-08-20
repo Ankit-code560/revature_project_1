@@ -2,7 +2,6 @@ package com.app.model;
 
 public class UserDetails {
 
-	private int userId;
 	private String userFirstName;
 	private String userLastName;
 	private long userContact;
@@ -10,12 +9,7 @@ public class UserDetails {
 	private String userEmail;
 	private String userPassword;
 	public UserDetails() {}
-	public int getUserId() {
-		return userId;
-	}
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
+
 	public String getUserFirstName() {
 		return userFirstName;
 	}
@@ -54,15 +48,15 @@ public class UserDetails {
 	}
 	@Override
 	public String toString() {
-		return "UserDetails [userId=" + userId + ", userFirstName=" + userFirstName + ", userLastName=" + userLastName
+		return "UserDetails [ userFirstName=" + userFirstName + ", userLastName=" + userLastName
 				+ ", userContact=" + userContact + ", userCardNo=" + userCardNo + ", userEmail=" + userEmail
 				+ ", userPassword=" + userPassword + "]";
 	}
 
-	public UserDetails(int userId, String userFirstName, String userLastName, long userContact, long userCardNo,
+	public UserDetails( String userFirstName, String userLastName, long userContact, long userCardNo,
 			String userEmail, String userPassword) {
 		super();
-		this.userId = userId;
+	
 		this.userFirstName = userFirstName;
 		this.userLastName = userLastName;
 		this.userContact = userContact;

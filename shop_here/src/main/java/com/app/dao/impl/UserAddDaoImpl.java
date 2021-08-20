@@ -19,23 +19,21 @@ public class UserAddDaoImpl implements UserAddDao{
 		try(Connection connection = SqlDbConnection.getConnection()){
 
 			
-			int id =userDetails.getUserId();
-			String check="select exists(select user_id from user where user_id=?)";
-			PreparedStatement preparedStatement2 =connection.prepareStatement(check);
-			preparedStatement2.setInt(1, id);
 			
-			String sql ="insert into user(user_id,user_first_name,user_last_name,user_contact,user_card_no,user_email,user_password) values(?,?,?,?,?,?,?)"; 
+			
+			
+			String sql ="insert into user(user_first_name,user_last_name,user_contact,user_card_no,user_email,user_password) values(?,?,?,?,?,?)"; 
 			PreparedStatement preparedStatement =connection.prepareStatement(sql);
 
 			
 
-			preparedStatement.setInt(1, id);
-			preparedStatement.setString(2, userDetails.getUserFirstName());
-			preparedStatement.setString(3, userDetails.getUserLastName());
-			preparedStatement.setLong(4, userDetails.getUserContact());
-			preparedStatement.setLong(5, userDetails.getUserCardNo());
-			preparedStatement.setString(6, userDetails .getUserEmail());
-			preparedStatement.setString(7, userDetails.getUserPassword());
+		
+			preparedStatement.setString(1, userDetails.getUserFirstName());
+			preparedStatement.setString(2, userDetails.getUserLastName());
+			preparedStatement.setLong(3, userDetails.getUserContact());
+			preparedStatement.setLong(4, userDetails.getUserCardNo());
+			preparedStatement.setString(5, userDetails .getUserEmail());
+			preparedStatement.setString(6, userDetails.getUserPassword());
 
 			c=preparedStatement.executeUpdate();
 

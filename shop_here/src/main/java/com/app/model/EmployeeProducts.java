@@ -8,6 +8,15 @@ public class EmployeeProducts {
 	private double proPrice;
 	private int proOrderedCount;
 	
+	
+	
+	public EmployeeProducts(String proName, String proCategory, double proPrice) {
+		super();
+		this.proName = proName;
+		this.proCategory = proCategory;
+		this.proPrice = proPrice;
+	}
+
 	public EmployeeProducts() {}
 	
 	public int getpId() {

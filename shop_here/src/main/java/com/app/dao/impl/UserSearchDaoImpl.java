@@ -12,6 +12,7 @@ import com.app.model.UserDetails;
 
 public class UserSearchDaoImpl implements UserSearchDao{
 
+	int user_id=0;
 	@Override
 	public int userSearch(UserDetails userDetails) throws BusinessException {
 int j=0;
@@ -34,10 +35,10 @@ int j=0;
 		}else {
 			do {
 				String data = resultSet.getString("user_first_name");
+				user_id=resultSet.getInt("user_id");
 				if(data!=null) {
-					System.out.println(data);
 					j+=1;
-					return j;
+					return user_id;
 				}
 			}while(resultSet.next());
 			
@@ -50,8 +51,8 @@ int j=0;
 			System.out.println(e);
 			throw new BusinessException("Internal Error");
 		}
-		
-		return j;
+
+		return user_id;
 	}
 
 }
